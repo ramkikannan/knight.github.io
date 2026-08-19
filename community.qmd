@@ -90,10 +90,7 @@ KG-to-token linearization gap, and graph-scale KG quality auditing. -->
 - **Great Lakes Symposium on VLSI, Newyork, 2026** -- Vikram Ramavarappu and Ashish Gautam
 
 ## Program Committee
-
 - **Neuro Inspired Computational Elements (NICE) 2025, 2026** -- Ashish Gautam
-
-
 
 ## Organizing Committee
 
@@ -103,6 +100,12 @@ KG-to-token linearization gap, and graph-scale KG quality auditing. -->
 - **Great Lakes Symposium on VLSI** -- Ashish Gautam
 
 ## Posters
+- **ASCR CS PI Meeting 2026, Rocville, MD** -- Ramakrishnan Kannan and Ashish Gautam
+- **NICE 2026, Atlanta, GA** -- Ramakrishnan Kannan and Ashish Gautam
 
-- **ASCR CS PI Meeting 2026, Rocville, MD**
-- **NICE 2026, Atlanta, GA**
+## Tutorial
+-- **Introduction to Fugu: A Framework for Composing Neural Algorithms, NICE 2026, Atlanta, GA** -- Felix Wang and James Brad Aimone
+-- **SuperNeuro + NeuroCoreX Tutorial: Running Fast and Scalable Neuromorphic Simulations, NICE 2026, Atlanta, GA** -- Ashish Gautam
+-- **SuperNeuro + NeuroCoreX Tutorial: Running Fast and Scalable Neuromorphic Simulations, , ICONS 2026** -- Ashish Gautam
+-- **Sango, an enhanced frontend interface to Fugu, ICONS 2026** -- Felix Wang
+
