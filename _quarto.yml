@@ -5,7 +5,7 @@ project:
 
 website:
   title: "KNIGHT"
-  site-url: https://code-ornl.github.io/knight-site/
+  site-url: https://knight.github.io/
   description: "Knowledge-graph methods for accelerating neuromorphic computing co-design."
   favicon: images/knight-logo.png
   navbar:
@@ -26,9 +26,9 @@ website:
     #   - icon: github
     #     href: https://github.com/CODE-ORNL/knight-site
     #     aria-label: GitHub
-  page-footer:
-    left: "(c) 2026 Oak Ridge National Laboratory. ORNL is managed by UT-Battelle, LLC for the U.S. Department of Energy."
-    right: "Built with [Quarto](https://quarto.org)."
+  # page-footer:
+  #   left: "(c) 2026 Oak Ridge National Laboratory. ORNL is managed by UT-Battelle, LLC for the U.S. Department of Energy."
+  #   right: "Built with [Quarto](https://quarto.org)."
   bread-crumbs: false
 
 format:
