@@ -5,7 +5,7 @@ project:
 
 website:
   title: "KNIGHT"
-  site-url: https://knight.github.io/
+  site-url: https://ramkikannan.com/knight/
   description: "Knowledge-graph methods for accelerating neuromorphic computing co-design."
   favicon: images/knight-logo.png
   navbar:
