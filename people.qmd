@@ -80,7 +80,6 @@ correct or extend an entry.
 <!-- `NeuKRAG` `Codesign Agent` -->
 :::
 
-::: {.people-grid}
 ::: {.person-card}
 ![](images/people/shuaicheng-zhang.jpg){.person-photo}
 [Shuaicheng Zhang]{.person-name}\
@@ -100,7 +99,6 @@ correct or extend an entry.
 ![](images/people/emily-herron.jpg){.person-photo}
 [Emily J Herron]{.person-name}\
 [Oak Ridge National Laboratory]{.person-affil}
-
 <!-- `NeuKRAG` `NeuKReAct` `Codesign Agent` -->
 :::
 :::
@@ -112,7 +110,6 @@ correct or extend an entry.
 ![](images/people/james-aimone.jpg){.person-photo}
 [James B. Aimone]{.person-name}\
 [Sandia National Laboratories]{.person-affil}
-
 <!-- `Codesign Agent` -->
 :::
 
@@ -120,32 +117,33 @@ correct or extend an entry.
 [WS]{.person-photo-placeholder}
 [William Severa]{.person-name}\
 [Sandia National Laboratories]{.person-affil}
+
 :::
 
 ::: {.person-card}
 ![](images/people/felix-wang.jpg){.person-photo}
 [Felix Wang]{.person-name}\
 [Sandia National Laboratories]{.person-affil}
-
 <!-- `NeuKRAG` `NeuKReAct` -->
+
 :::
 :::
 
 ## Virginia Tech Collaborators
 
+::: {.people-grid}
 ::: {.person-card}
 ![](images/people/dawei-zhou.jpg){.person-photo}
 [Dawei Zhou]{.person-name}\
 [Virginia Tech]{.person-affil}
-
 <!-- `Codesign Agent` -->
 :::
 :::
 
-## System authorship
+<!-- ## System authorship
 
 For full author lists and citation details, see the [Publications](publications.qmd)
 page. Author affiliations as listed on the NeuKRAG (NICE 2026) paper:
 Ramakrishnan Kannan, Ashish Gautam, Robert Patton, Nicholas D. Haas, Todd
 Thomas, James B. Aimone, and Thomas Potok -- Oak Ridge National Laboratory and
-Sandia National Laboratories.
+Sandia National Laboratories. -->
