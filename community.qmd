@@ -84,11 +84,22 @@ KG-to-token linearization gap, and graph-scale KG quality auditing. -->
 
 ## Invited Talks
 
+
 ## Presentations
+
 
 ## Program Committee
 
+- ** Neuro Inspired Computational Elements (NICE) 2025, 2026 ** -- Ashish Gautam
+
+
 ## Organizing Committee
+
+- ** ORNL Core Universities AI Workshop (AI-CORE) 2025, 2026 ** -- Ramakrishnan Kannan and Thomas E Potok
+- ** ACM International Conference on Neuromorphic Systems 2025, 2026 ** -- Thomas E Potok and Ashish Gautam
+- ** Neuro Inspired Computational Elements Conference 2026 ** -- James B Aimone
+- ** Great Lakes Symposium on VLSI ** -- Ashish Gautam
+- ** 
 
 ## Posters
 
