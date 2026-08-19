@@ -1,0 +1,15 @@
+---
+title: "Publications"
+subtitle: "KNIGHT papers and preprints"
+---
+
+## Project papers & preprints
+
+The three project papers below are generated automatically from
+[`bib/knight-project.bib`](https://github.com/CODE-ORNL/knight-site/blob/main/bib/knight-project.bib)
+by `scripts/gen_project_papers.py`, which regenerates `_project-papers.qmd` on
+every render/preview (wired up as a project `pre-render` hook in
+`_quarto.yml`). Edit the `.bib` file and re-render -- no need to touch this
+page.
+
+{{< include _project-papers.qmd >}}

@@ -1,0 +1,176 @@
+/* KNIGHT project site styles */
+
+.navbar {
+  box-shadow: 0 1px 4px rgba(0, 69, 77, 0.25);
+}
+
+.navbar-title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.navbar-logo {
+  max-height: 32px;
+}
+
+main.content {
+  max-width: 900px;
+}
+
+.hero-banner {
+  background: linear-gradient(135deg, #00454D 0%, #00662C 100%);
+  color: #f4f7fa;
+  padding: 2.5rem 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero-banner h1,
+.hero-banner p {
+  color: #f4f7fa;
+}
+
+.hero-banner-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.hero-logo {
+  flex: 0 0 auto;
+  width: 110px;
+  height: auto;
+}
+
+.hero-banner-text {
+  flex: 1 1 auto;
+}
+
+@media (max-width: 640px) {
+  .hero-banner-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.thread-card {
+  border: 1px solid #d7e3da;
+  border-left: 4px solid #00662C;
+  border-radius: 0.25rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  background-color: #fbfcfb;
+}
+
+.thread-card h3 {
+  margin-top: 0;
+  color: #00454D;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.stat-card {
+  background-color: #EAF2ED;
+  border-radius: 0.4rem;
+  padding: 0.9rem;
+  text-align: center;
+}
+
+.stat-card .stat-number {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #00662C;
+}
+
+.stat-card .stat-label {
+  font-size: 0.8rem;
+  color: #5B6B77;
+}
+
+.role-group h3 {
+  border-bottom: 2px solid #00662C;
+  padding-bottom: 0.25rem;
+  color: #00454D;
+}
+
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.person-card {
+  border: 1px solid #d7e3da;
+  border-radius: 0.4rem;
+  padding: 0.9rem 1rem;
+  background-color: #fbfcfb;
+}
+
+.person-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 0.6rem;
+  border: 1px solid #d7e3da;
+}
+
+.person-photo-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.6rem;
+  background-color: #00662C;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.person-card .person-name {
+  font-weight: 600;
+  color: #00454D;
+}
+
+.person-card .person-affil {
+  font-size: 0.85rem;
+  color: #5B6B77;
+}
+
+.software-card {
+  border: 1px solid #d7e3da;
+  border-radius: 0.4rem;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.software-card h3 {
+  color: #00454D;
+  margin-top: 0;
+}
+
+.badge-doe {
+  display: inline-block;
+  background-color: #EAF2ED;
+  color: #00662C;
+  border: 1px solid #00662C;
+  border-radius: 1rem;
+  padding: 0.15rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+figure figcaption {
+  color: #5B6B77;
+  font-size: 0.85rem;
+}

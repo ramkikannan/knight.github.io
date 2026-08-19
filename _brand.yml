@@ -1,0 +1,34 @@
+meta:
+  name: KNIGHT
+  link: https://github.com/CODE-ORNL/knight-site
+
+color:
+  palette:
+    ornl-teal: "#00454D"
+    ornl-green: "#00662C"
+    ornl-sage: "#3F8C5E"
+    ornl-slate: "#5B6B77"
+    ornl-fog: "#EAF2ED"
+    ornl-graphite: "#2B2F33"
+    ornl-accent: "#8BFEBF"
+  foreground: ornl-graphite
+  background: white
+  primary: ornl-green
+  secondary: ornl-slate
+  tertiary: ornl-fog
+  success: "#2E7D5B"
+  info: ornl-sage
+  warning: "#B8860B"
+  danger: "#A3382B"
+  light: ornl-fog
+  dark: ornl-teal
+  link: ornl-green
+
+typography:
+  base:
+    family: "Source Sans Pro"
+  headings:
+    family: "Source Sans Pro"
+    weight: 600
+  monospace:
+    family: "Source Code Pro"

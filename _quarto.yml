@@ -1,0 +1,48 @@
+project:
+  type: website
+  output-dir: docs
+  pre-render: python3 scripts/gen_project_papers.py
+
+website:
+  title: "KNIGHT"
+  site-url: https://code-ornl.github.io/knight-site/
+  description: "Knowledge-graph methods for accelerating neuromorphic computing co-design."
+  favicon: images/knight-logo.png
+  navbar:
+    background: primary
+    logo: images/knight-logo.png
+    left:
+      - href: index.qmd
+        text: Home
+      - href: people.qmd
+        text: People
+      - href: publications.qmd
+        text: Publications
+      - href: software.qmd
+        text: Software
+      - href: community.qmd
+        text: Community
+    # right:
+    #   - icon: github
+    #     href: https://github.com/CODE-ORNL/knight-site
+    #     aria-label: GitHub
+  page-footer:
+    left: "(c) 2026 Oak Ridge National Laboratory. ORNL is managed by UT-Battelle, LLC for the U.S. Department of Energy."
+    right: "Built with [Quarto](https://quarto.org)."
+  bread-crumbs: false
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+    link-external-newwindow: true
+    grid:
+      body-width: 900px
+
+# bibliography: bib/refs.bib
+
+
+

@@ -1,0 +1,80 @@
+---
+title: "Software"
+subtitle: "KNIGHT software artifacts"
+---
+KNIGHT's codebase is organized around three distinct, independently useful
+artifacts: a knowledge-graph construction pipeline, a GraphRAG query layer
+built on top of it, and an interactive Streamlit application for
+KG-grounded neuromorphic co-design. Repository links below are placeholders
+pending public release approval.
+
+::: {.software-card}
+### KG Construction Pipeline
+`kg-builder`
+
+Python package (Typer CLI) that transforms a corpus of scientific PDFs into
+a structured, deduplicated knowledge graph. Stages: `save-inputs -> extract ->
+merge -> postmerge -> dedupe -> cluster -> embed -> ontology -> check`. Supports
+multi-model parallel LLM extraction (vLLM + Ollama backends), fuzzy-matching
+deduplication, Louvain clustering, FAISS embedding indices, and OWL ontology
+generation with consistency checking. The multimodal extension used by the
+Neuromorphic Codesign Agent adds DeepSeek-OCR-2 ingestion plus formula, code,
+and SPICE netlist node types with cross-modal edge construction.
+
+<!-- **Repository:** [github.com/CODE-ORNL/knight-kg-builder](https://github.com/CODE-ORNL/knight-kg-builder) *(placeholder -- repository not yet public)* 
+
+::: {.badge-doe}
+Register in DOE CODE prior to public release
+:::-->
+:::  
+
+::: {.software-card}
+### GraphRAG Query Layer
+`graphrag` (part of `kg-builder`)
+
+Multi-stage retrieval-and-reasoning engine that queries the constructed KG:
+FAISS vector similarity search for entry-node discovery, k-hop BFS graph
+traversal to collect a relevant subgraph of triples with provenance, hybrid
+reranking by triple coverage and semantic similarity, and role-specific LLM
+routing (extractor -> ranker -> reasoner) to synthesize a cited answer. The
+codesign-agent variant extends this with GraphSAGE neighborhood sampling,
+cross-modal traversal (concept -> formula -> code -> netlist), and query-type-
+aware attention weighting, plus a built-in standard-GraphRAG baseline
+comparison for every query.
+
+<!-- **Repository:** [github.com/CODE-ORNL/knight-graphrag](https://github.com/CODE-ORNL/knight-graphrag) *(placeholder -- repository not yet public)* 
+
+::: {.badge-doe}
+Register in DOE CODE prior to public release 
+:::-->
+:::
+
+::: {.software-card}
+### Streamlit Codesign Application
+`streamlit_app_modular.py`
+
+Interactive web application implementing the Neuromorphic Codesign Agent's
+online phase: KG search, research analysis (limitations, novelty, evolution
+chains), a four-strategy hypothesis engine (limitation-, analogy-, gap-, and
+conflict-driven) with embedding-based deduplication and five-dimensional
+scoring, three-stage LLM critique and sharpening, six-source constraint
+extraction, constrained Python code generation (seven-check validation
+loop), and SPICE netlist generation (five-check validation loop with six
+post-processing stages) -- with a GraphRAG baseline comparison surfaced
+alongside every result.
+
+<!-- **Repository:** [github.com/CODE-ORNL/knight-codesign-app](https://github.com/CODE-ORNL/knight-codesign-app) *(placeholder -- repository not yet public)* 
+
+::: {.badge-doe}
+Please contact the PI to request access to the codebase. 
+:::-->
+::: 
+
+## Release notes
+
+All three artifacts are currently under active development at Oak Ridge
+National Laboratory. Public GitHub repositories will be created and linked
+here once cleared for release. Please contact the PI to request access to the codebase.
+<!-- and each will be registered in -->
+<!-- [DOE CODE](https://www.osti.gov/doecode/) as required for DOE-funded -->
+<!-- software. -->

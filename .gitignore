@@ -1,0 +1,6 @@
+/.quarto/
+/docs/
+.DS_Store
+site_libs/
+
+**/*.quarto_ipynb
