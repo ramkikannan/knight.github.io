@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>KNIGHT</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./images/knight-logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2bec29a9bacf2b598905820d71afb463.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-5fc413f607176f2629b9db3f72267386.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2bec29a9bacf2b598905820d71afb463.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-c496b5c7a56ed729359c308fea33745d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-5299e45480861055f0266bcd319fc2d9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c496b5c7a56ed729359c308fea33745d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/knight-logo.png" alt="" class="navbar-logo light-content">
+    <img src="./images/knight-logo.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">KNIGHT</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./people.html"> 
+<span class="menu-text">People</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./software.html"> 
+<span class="menu-text">Software</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./community.html"> 
+<span class="menu-text">Community</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-problem-energy-walls-and-knowledge-silos" id="toc-the-problem-energy-walls-and-knowledge-silos" class="nav-link active" data-scroll-target="#the-problem-energy-walls-and-knowledge-silos">The problem: energy walls and knowledge silos</a></li>
+  <li><a href="#three-complementary-research-threads" id="toc-three-complementary-research-threads" class="nav-link" data-scroll-target="#three-complementary-research-threads">Three complementary research threads</a>
+  <ul class="collapse">
+  <li><a href="#neukrag-scalable-scientific-kg-construction-graphrag" id="toc-neukrag-scalable-scientific-kg-construction-graphrag" class="nav-link" data-scroll-target="#neukrag-scalable-scientific-kg-construction-graphrag">1. NeuKRAG – scalable scientific KG construction &amp; GraphRAG</a></li>
+  <li><a href="#neukrag-domain-neukreact-cross-domain-agentic-hypothesis-generation" id="toc-neukrag-domain-neukreact-cross-domain-agentic-hypothesis-generation" class="nav-link" data-scroll-target="#neukrag-domain-neukreact-cross-domain-agentic-hypothesis-generation">2. NeuKRAG (domain) &amp; NeuKReAct – cross-domain agentic hypothesis generation</a></li>
+  <li><a href="#neuromorphic-codesign-agent-multimodal-kg-constrained-generation" id="toc-neuromorphic-codesign-agent-multimodal-kg-constrained-generation" class="nav-link" data-scroll-target="#neuromorphic-codesign-agent-multimodal-kg-constrained-generation">3. Neuromorphic Codesign Agent – multimodal KG &amp; constrained generation</a></li>
+  </ul></li>
+  <li><a href="#the-knight-stack" id="toc-the-knight-stack" class="nav-link" data-scroll-target="#the-knight-stack">The KNIGHT stack</a></li>
+  <li><a href="#learn-more" id="toc-learn-more" class="nav-link" data-scroll-target="#learn-more">Learn more</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">KNIGHT</h1>
+<p class="subtitle lead">Knowledge-Graph Methods for Neuromorphic Computing Co-Design</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="hero-banner">
+<div class="hero-banner-inner">
+<p><img src="images/knight-logo.png" class="hero-logo img-fluid"></p>
+<div class="hero-banner-text">
+<p><strong>Knowledge-graph-driven reasoning for accelerating neuromorphic computing co-design</strong></p>
+<p>KNIGHT builds knowledge-graph (KG) construction, GraphRAG retrieval, and agentic reasoning systems that connect neuroscience, circuit design, device physics, and computer architecture – the disciplines that must be co-designed to realize next-generation, brain-inspired computing hardware.</p>
+</div>
+</div>
+</div>
+<section id="the-problem-energy-walls-and-knowledge-silos" class="level2">
+<h2 class="anchored" data-anchor-id="the-problem-energy-walls-and-knowledge-silos">The problem: energy walls and knowledge silos</h2>
+<p>Neuromorphic computing promises orders-of-magnitude efficiency gains over conventional AI hardware – the human brain runs roughly 86 billion neurons and 100 trillion synapses on about 20 W, while the von Neumann bottleneck of moving data between CPU and memory consumes 60-80% of the energy in today’s deep learning workloads. Realizing that promise requires <strong>iterative co-design</strong> across neuroscience, machine learning, circuit design, device materials, and computer architecture: a learning rule choice constrains device variability tolerances, a circuit topology bounds achievable network architectures, and a fabrication constraint can rule out an entire algorithmic family.</p>
+<p>That knowledge is scattered across thousands of publications, and it rarely crosses domain boundaries on its own. An analysis of papers spanning neuroscience, machine learning, and neuromorphic computing found <strong>8,771 citation events but only 6 that bridge across all three domains</strong> – the cross-domain synthesis that co-design depends on is almost never done by the literature itself, and naive LLMs and vector-based RAG cannot reliably fill the gap: they hallucinate, lose provenance, and cannot traverse the multi-hop chains (device -&gt; circuit -&gt; learning rule -&gt; performance) that hardware-aware reasoning requires.</p>
+<p>KNIGHT’s central thesis is that <strong>structured knowledge graphs are the connective tissue</strong> across the neuromorphic co-design stack – from <code>SuperNeuroMAT</code> algorithm simulation, to <code>NeuroCoreX</code> FPGA emulation, to <code>Daffodil</code> memristive device characterization.</p>
+<div id="fig-overview" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/knight-project-overview.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The KNIGHT knowledge graph connects publications, mathematical models, code, and circuit artifacts into a single queryable substrate spanning the neuromorphic co-design stack.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="three-complementary-research-threads" class="level2">
+<h2 class="anchored" data-anchor-id="three-complementary-research-threads">Three complementary research threads</h2>
+<p>KNIGHT is built as three progressively deeper systems, each extending the last – from general-purpose scientific KG construction, to cross-domain agentic reasoning, to full multimodal co-design automation.</p>
+<section id="neukrag-scalable-scientific-kg-construction-graphrag" class="level3 thread-card">
+<h3 class="anchored" data-anchor-id="neukrag-scalable-scientific-kg-construction-graphrag">1. NeuKRAG – scalable scientific KG construction &amp; GraphRAG</h3>
+<p><em>(NICE 2026 paper / SciKRAG framework)</em></p>
+<p>NeuKRAG is a general-purpose pipeline for constructing scientific knowledge graphs from technical literature and querying them through GraphRAG. Documents are processed through an 8-stage pipeline – <code>extract -&gt; merge -&gt; postmerge -&gt; dedupe -&gt; cluster -&gt; embed -&gt; ontology -&gt; check</code> – using open, lightweight LLMs (<code>gpt-oss-120b</code>, <code>llama3.3:70b</code>, <code>gpt-oss-20b</code>, <code>ibm/granite4:small-h</code>) served across distributed vLLM and Ollama backends. <!-- Applied to 2,396 neuromorphic
+computing papers, the pipeline extracted **921,545 triples** with a **100%
+query completion rate**.  --> The GraphRAG query layer combines FAISS vector similarity with k-hop graph traversal and role-specific LLM routing (extractor -&gt; ranker -&gt; reasoner) to produce responses <strong>richer</strong> than naive LLM baselines, with every claim traceable to a source paper and section. This system generalizes beyond neuromorphics to any technical domain requiring structured, explainable scientific reasoning.</p>
+</section>
+<section id="neukrag-domain-neukreact-cross-domain-agentic-hypothesis-generation" class="level3 thread-card">
+<h3 class="anchored" data-anchor-id="neukrag-domain-neukreact-cross-domain-agentic-hypothesis-generation">2. NeuKRAG (domain) &amp; NeuKReAct – cross-domain agentic hypothesis generation</h3>
+<p>Applied specifically to neuromorphic literature, the KG-RAG approach exposes multi-hop relationships (e.g., device variability -&gt; STDP robustness -&gt; algorithm selection) that vector search alone cannot surface. <strong>NeuKReAct</strong> extends this into an agentic reasoning framework: a multi-corpus KG spans neuroscience, machine learning, and neuromorphic computing – <!-- (750 papers), (1,163 papers), (1,745 papers) 3,658 papers unified by 8,771 citation edges.  --> A DSPy ReAct agent works through a <strong>7-stage locked blackboard</strong> – <code>lit_search -&gt; neuron_choice -&gt; synapse_choice -&gt; learning_rule -&gt; architecture -&gt; implementation -&gt; evaluation</code> – using 11 specialized retrieval tools, then an <strong>execution head</strong> turns the committed design into a structured Markdown design document and a runnable SNNTorch codebase, completed end-to-end by an off-the-shelf coding agent with an auto-verification retry loop. NeuKReAct also introduces a <strong>combinatorial creativity score</strong> <code>N(R)</code>, the mean shortest-path distance between retrieved papers in the citation graph, to quantify cross-domain novelty. <!-- -- multi-corpus retrieval reaches `N(R) = 7.13`
+versus `4.80` for a single-corpus baseline on a pendulum-control task. --></p>
+</section>
+<section id="neuromorphic-codesign-agent-multimodal-kg-constrained-generation" class="level3 thread-card">
+<h3 class="anchored" data-anchor-id="neuromorphic-codesign-agent-multimodal-kg-constrained-generation">3. Neuromorphic Codesign Agent – multimodal KG &amp; constrained generation</h3>
+<p>The Neuromorphic Codesign Agent scales the KG and extends it with <strong>multimodal nodes</strong>: typed concept nodes, LaTeX formula nodes, validated Python code snippets, and validated SPICE netlists, linked by typed cross-modal edges (<code>DEFINED_BY</code>, <code>HAS_CODE</code>, <code>HAS_NETLIST</code>, <code>DERIVED_FROM</code>) with cross-document deduplication merges creating one connected substrate instead of per-document silos. An interactive Streamlit application runs a <strong>four-strategy hypothesis engine</strong> (limitation-, analogy-, gap-, and conflict-driven generation) with embedding-based deduplication and five-dimensional scoring (novelty, groundedness, feasibility, testability, internal consistency), then produces <strong>constraint-driven code and circuit generation</strong>: a seven-check validation loop for Python (raising constraint compliance from ~70% to ~88%) and a five-check validation loop with six post-processing stages for SPICE netlists – closing the loop from biological principle to a simulation-ready hardware circuit.</p>
+</section>
+<div id="fig-codesign" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-codesign-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/codesign-workflow.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-codesign-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Neuromorphic Codesign Agent workflow: KG-grounded research analysis, multi-strategy hypothesis generation, and constrained code/netlist synthesis, benchmarked against a standard GraphRAG baseline on every query.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-knight-stack" class="level2">
+<h2 class="anchored" data-anchor-id="the-knight-stack">The KNIGHT stack</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>System</th>
+<th>Contribution</th>
+<th>Corpus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 - KG Foundation</td>
+<td><strong>NeuKRAG</strong></td>
+<td>Structured, queryable KG with GraphRAG retrieval</td>
+<td>2,396 neuromorphic papers</td>
+</tr>
+<tr class="even">
+<td>2 - Cross-Domain Reasoning</td>
+<td><strong>NeuKReAct</strong></td>
+<td>Multi-corpus agentic planning + creativity metrics</td>
+<td>3,658 papers (neuroscience + ML + neuromorphic)</td>
+</tr>
+<tr class="odd">
+<td>3 - Full Co-Design</td>
+<td><strong>Neuromorphic Codesign Agent</strong></td>
+<td>Multimodal KG -&gt; hypothesis -&gt; code -&gt; SPICE circuit</td>
+<td>5,999 PDFs</td>
+</tr>
+</tbody>
+</table>
+<p>The common thread across all three layers is a structured knowledge graph that stays queryable, provenance-tracked, and explainable as it grows from text triples to a multimodal substrate spanning formulas, code, and circuits.</p>
+<!-- ![A slice of the KNIGHT knowledge graph, visualizing entity clusters and typed relations extracted from the neuromorphic computing literature.](images/kg-visualization.png){#fig-kgviz} -->
+</section>
+<section id="learn-more" class="level2">
+<h2 class="anchored" data-anchor-id="learn-more">Learn more</h2>
+<p>Supporting visuals and extended narrative for this overview are drawn from project presentations and posters – see the <a href="./community.html">Community &amp; Activities</a> page for the DOE ASCR PI Meeting poster, workshop deck, and related talks. Full technical detail is available on the <a href="./publications.html">Publications</a> page, and the underlying software is described on the <a href="./software.html">Software</a> page.</p>
+<div class="stat-grid">
+<div class="stat-card">
+<p><span class="stat-number">921,545</span> <span class="stat-label">triples - NeuKRAG (2,396 papers)</span></p>
+</div>
+<div class="stat-card">
+<p><span class="stat-number">3,658</span> <span class="stat-label">papers - NeuKReAct multi-corpus KG</span></p>
+</div>
+<div class="stat-card">
+<p><span class="stat-number">5,999</span> <span class="stat-label">PDFs - Codesign Agent multimodal KG</span></p>
+</div>
+<div class="stat-card">
+<p><span class="stat-number">165,287</span> <span class="stat-label">cross-modal edges (concept&lt;-&gt;formula&lt;-&gt;code&lt;-&gt;netlist)</span></p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/knight\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<ol start="3" type="a">
+<li>2026 Oak Ridge National Laboratory. ORNL is managed by UT-Battelle, LLC for the U.S. Department of Energy.</li>
+</ol>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
