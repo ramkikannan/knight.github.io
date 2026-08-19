@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://knight.github.io/software.html</loc>
-    <lastmod>2026-08-19T03:10:16.923Z</lastmod>
+    <loc>https://knight.github.io/people.html</loc>
+    <lastmod>2026-08-19T03:19:30.249Z</lastmod>
   </url>
   <url>
     <loc>https://knight.github.io/publications.html</loc>
-    <lastmod>2026-08-19T03:10:16.923Z</lastmod>
-  </url>
-  <url>
-    <loc>https://knight.github.io/index.html</loc>
-    <lastmod>2026-08-19T03:10:16.911Z</lastmod>
+    <lastmod>2026-08-19T02:19:21.963Z</lastmod>
   </url>
   <url>
     <loc>https://knight.github.io/community.html</loc>
-    <lastmod>2026-08-19T03:10:16.901Z</lastmod>
+    <lastmod>2026-08-19T03:00:00.752Z</lastmod>
   </url>
   <url>
-    <loc>https://knight.github.io/people.html</loc>
-    <lastmod>2026-08-19T03:10:16.923Z</lastmod>
+    <loc>https://knight.github.io/index.html</loc>
+    <lastmod>2026-08-19T02:19:21.948Z</lastmod>
+  </url>
+  <url>
+    <loc>https://knight.github.io/software.html</loc>
+    <lastmod>2026-08-19T02:19:21.964Z</lastmod>
   </url>
 </urlset>
