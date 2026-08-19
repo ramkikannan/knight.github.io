@@ -91,6 +91,10 @@ KG-to-token linearization gap, and graph-scale KG quality auditing. -->
 
 ## Program Committee
 - **Neuro Inspired Computational Elements (NICE) 2025, 2026** -- Ashish Gautam
+- **Area Track Chair at ACM Special Interest Group on Knowledge Discovery and Data Mining 2025, 2026** -- Ramakrishnan Kannan
+- **Research Track Chair for Machine Learning at IEEE International Parallel & Distributed Processing Symposium, 2026** -- Ramakrishnan Kannan
+- **AAAI Conference on Artificial Intelligence 2025, 2026** -- Ramakrishnan Kannan
+- **International Conference for High Performance Computing, Networking, Storage, and Analysis (SC) 2025** -- Ramakrishnan Kannan
 
 ## Organizing Committee
 
