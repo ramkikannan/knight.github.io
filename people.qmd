@@ -84,6 +84,7 @@ correct or extend an entry.
 ![](images/people/zachary-johnson-scott.jpg){.person-photo}
 [Zachary Johnson-Scott]{.person-name}\
 [Oak Ridge National Laboratory]{.person-affil}
+:::
 
 ::: {.person-card}
 ![](images/people/emily-herron.jpg){.person-photo}
@@ -109,6 +110,7 @@ correct or extend an entry.
 [WS]{.person-photo-placeholder}
 [William Severa]{.person-name}\
 [Sandia National Laboratories]{.person-affil}
+:::
 
 ::: {.person-card}
 ![](images/people/felix-wang.jpg){.person-photo}
