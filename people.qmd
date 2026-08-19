@@ -75,10 +75,20 @@ correct or extend an entry.
 ::: {.person-card}
 ![](images/people/vikram-ramavarappu.jpg){.person-photo}
 [Vikram Ramavarappu]{.person-name}\
-[Oak Ridge National Laboratory]{.person-affil}
+[University of Illinois -- Urbana Champagne -- Intern]{.person-affil}
 
 <!-- `NeuKRAG` `Codesign Agent` -->
 :::
+
+::: {.people-grid}
+::: {.person-card}
+![](images/people/shuaicheng-zhang.jpg){.person-photo}
+[Shuaicheng Zhang]{.person-name}\
+[Virginia Tech -- Intern]{.person-affil}
+
+<!-- `Codesign Agent` -->
+:::
+
 
 ::: {.person-card}
 ![](images/people/zachary-johnson-scott.jpg){.person-photo}
@@ -122,15 +132,6 @@ correct or extend an entry.
 :::
 
 ## Virginia Tech Collaborators
-
-::: {.people-grid}
-::: {.person-card}
-![](images/people/shuaicheng-zhang.jpg){.person-photo}
-[Shuaicheng Zhang]{.person-name}\
-[Virginia Tech]{.person-affil}
-
-<!-- `Codesign Agent` -->
-:::
 
 ::: {.person-card}
 ![](images/people/dawei-zhou.jpg){.person-photo}
