@@ -1,31 +1,17 @@
 [
   {
-    "objectID": "people.html",
-    "href": "people.html",
-    "title": "People",
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Software",
     "section": "",
-    "text": "KNIGHT is a collaboration between Oak Ridge National Laboratory, Sandia National Laboratories, and Virginia Tech. The roster below is drawn from the project team slide and the author lists of the NeuKRAG, NeuKReAct, and Neuromorphic Codesign Agent papers. Badges indicate which of the three systems each person contributes to."
+    "text": "KNIGHT’s codebase is organized around three distinct, independently useful artifacts: a knowledge-graph construction pipeline, a GraphRAG query layer built on top of it, and an interactive Streamlit application for KG-grounded neuromorphic co-design. Repository links below are placeholders pending public release approval."
   },
   {
-    "objectID": "people.html#oak-ridge-national-laboratory",
-    "href": "people.html#oak-ridge-national-laboratory",
-    "title": "People",
-    "section": "Oak Ridge National Laboratory",
-    "text": "Oak Ridge National Laboratory\n\n\n Ramakrishnan Kannan\nOak Ridge National Laboratory\n\n\n Ashish Gautam\nOak Ridge National Laboratory\n\n\n\n Robert Patton\nOak Ridge National Laboratory\n\n\n\n Thomas E. Potok\nOak Ridge National Laboratory\n\n\n\nTT Todd Thomas\nOak Ridge National Laboratory\n\n\n\n Nicholas Haas\nOak Ridge National Laboratory\n\n\n\n Vikram Ramavarappu\nUniversity of Illinois – Urbana Champagne – Intern\n\n\n\n Shuaicheng Zhang\nVirginia Tech – Intern\n\n\n\n Zachary Johnson-Scott\nOak Ridge National Laboratory\n\n\n Emily J Herron\nOak Ridge National Laboratory"
-  },
-  {
-    "objectID": "people.html#sandia-national-laboratories",
-    "href": "people.html#sandia-national-laboratories",
-    "title": "People",
-    "section": "Sandia National Laboratories",
-    "text": "Sandia National Laboratories\n\n\n James B. Aimone\nSandia National Laboratories \n\n\nWS William Severa\nSandia National Laboratories\n\n\n Felix Wang\nSandia National Laboratories"
-  },
-  {
-    "objectID": "people.html#virginia-tech-collaborators",
-    "href": "people.html#virginia-tech-collaborators",
-    "title": "People",
-    "section": "Virginia Tech Collaborators",
-    "text": "Virginia Tech Collaborators\n\n\n Dawei Zhou\nVirginia Tech"
+    "objectID": "software.html#release-notes",
+    "href": "software.html#release-notes",
+    "title": "Software",
+    "section": "Release notes",
+    "text": "Release notes\nAll three artifacts are currently under active development at Oak Ridge National Laboratory. Public GitHub repositories will be created and linked here once cleared for release. Please contact the PI to request access to the codebase."
   },
   {
     "objectID": "publications.html",
@@ -40,6 +26,41 @@
     "title": "Publications",
     "section": "",
     "text": "The three project papers below are generated automatically from bib/knight-project.bib by scripts/gen_project_papers.py, which regenerates _project-papers.qmd on every render/preview (wired up as a project pre-render hook in _quarto.yml). Edit the .bib file and re-render – no need to touch this page.\n\n\n\nKannan, R., Gautam, A., Patton, R. M., Haas, N. D., Thomas, T., Aimone, J. B., Potok, T. E. Oak Ridge National Laboratory & Sandia National Laboratories. Neuro Inspired Computational Elements, NICE 2026, Atlanta, GA, USA, March 24-26, 2026. IEEE, pp. 1-9.\nScalable pipeline for constructing scientific knowledge graphs from neuromorphic literature with open LLMs, and a GraphRAG query layer combining vector search and k-hop graph traversal. 2,396 documents, 921,545 triples, 100% query completion.\nDownload PDF - DOI: 10.1109/NICE69539.2026.11567520\n\n\n\nRamavarapu, V., Johnson-Scott, Z., Gautam, A., Kannan, R. Proceedings of the 16th ACM International Green and Sustainable Computing Conference, IGSC 2026, CanandaiguaUSA, June 22-24, 2026. ACM, pp. 97-102.\nIntroduces a multi-corpus knowledge graph spanning neuroscience, traditional machine learning, and neuromorphic computing, and NeuKReAct, an agentic reasoning framework that iteratively retrieves from the graph and synthesizes neuromorphic model design hypotheses via a step-by-step blackboard architecture, plus an execution head that translates hypotheses into structured design documents and runnable code.\nDOI: 10.1145/3797248.3816054\n\n\n\nResearch Team Oak Ridge National Laboratory, with Virginia Tech collaborators. Manuscript in preparation.\nA two-phase system automating neuromorphic research workflows via a multimodal KG (concepts, LaTeX formulas, validated Python code, validated SPICE netlists) built from 5,999 PDFs, plus an interactive Streamlit application for KG-grounded hypothesis generation and constrained code/circuit synthesis.\nPDF forthcoming."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "KNIGHT",
+    "section": "",
+    "text": "Knowledge-graph-driven reasoning for accelerating neuromorphic computing co-design\nKNIGHT builds knowledge-graph (KG) construction, GraphRAG retrieval, and agentic reasoning systems that connect neuroscience, circuit design, device physics, and computer architecture – the disciplines that must be co-designed to realize next-generation, brain-inspired computing hardware."
+  },
+  {
+    "objectID": "index.html#the-problem-energy-walls-and-knowledge-silos",
+    "href": "index.html#the-problem-energy-walls-and-knowledge-silos",
+    "title": "KNIGHT",
+    "section": "The problem: energy walls and knowledge silos",
+    "text": "The problem: energy walls and knowledge silos\nNeuromorphic computing promises orders-of-magnitude efficiency gains over conventional AI hardware – the human brain runs roughly 86 billion neurons and 100 trillion synapses on about 20 W, while the von Neumann bottleneck of moving data between CPU and memory consumes 60-80% of the energy in today’s deep learning workloads. Realizing that promise requires iterative co-design across neuroscience, machine learning, circuit design, device materials, and computer architecture: a learning rule choice constrains device variability tolerances, a circuit topology bounds achievable network architectures, and a fabrication constraint can rule out an entire algorithmic family.\nThat knowledge is scattered across thousands of publications, and it rarely crosses domain boundaries on its own. An analysis of papers spanning neuroscience, machine learning, and neuromorphic computing found 8,771 citation events but only 6 that bridge across all three domains – the cross-domain synthesis that co-design depends on is almost never done by the literature itself, and naive LLMs and vector-based RAG cannot reliably fill the gap: they hallucinate, lose provenance, and cannot traverse the multi-hop chains (device -&gt; circuit -&gt; learning rule -&gt; performance) that hardware-aware reasoning requires.\nKNIGHT’s central thesis is that structured knowledge graphs are the connective tissue across the neuromorphic co-design stack – from SuperNeuroMAT algorithm simulation, to NeuroCoreX FPGA emulation, to Daffodil memristive device characterization.\n\n\n\n\n\n\nFigure 1: The KNIGHT knowledge graph connects publications, mathematical models, code, and circuit artifacts into a single queryable substrate spanning the neuromorphic co-design stack."
+  },
+  {
+    "objectID": "index.html#three-complementary-research-threads",
+    "href": "index.html#three-complementary-research-threads",
+    "title": "KNIGHT",
+    "section": "Three complementary research threads",
+    "text": "Three complementary research threads\nKNIGHT is built as three progressively deeper systems, each extending the last – from general-purpose scientific KG construction, to cross-domain agentic reasoning, to full multimodal co-design automation.\n\n1. NeuKRAG – scalable scientific KG construction & GraphRAG\n(NICE 2026 paper / SciKRAG framework)\nNeuKRAG is a general-purpose pipeline for constructing scientific knowledge graphs from technical literature and querying them through GraphRAG. Documents are processed through an 8-stage pipeline – extract -&gt; merge -&gt; postmerge -&gt; dedupe -&gt; cluster -&gt; embed -&gt; ontology -&gt; check – using open, lightweight LLMs (gpt-oss-120b, llama3.3:70b, gpt-oss-20b, ibm/granite4:small-h) served across distributed vLLM and Ollama backends.  The GraphRAG query layer combines FAISS vector similarity with k-hop graph traversal and role-specific LLM routing (extractor -&gt; ranker -&gt; reasoner) to produce responses richer than naive LLM baselines, with every claim traceable to a source paper and section. This system generalizes beyond neuromorphics to any technical domain requiring structured, explainable scientific reasoning.\n\n\n2. NeuKRAG (domain) & NeuKReAct – cross-domain agentic hypothesis generation\nApplied specifically to neuromorphic literature, the KG-RAG approach exposes multi-hop relationships (e.g., device variability -&gt; STDP robustness -&gt; algorithm selection) that vector search alone cannot surface. NeuKReAct extends this into an agentic reasoning framework: a multi-corpus KG spans neuroscience, machine learning, and neuromorphic computing –  A DSPy ReAct agent works through a 7-stage locked blackboard – lit_search -&gt; neuron_choice -&gt; synapse_choice -&gt; learning_rule -&gt; architecture -&gt; implementation -&gt; evaluation – using 11 specialized retrieval tools, then an execution head turns the committed design into a structured Markdown design document and a runnable SNNTorch codebase, completed end-to-end by an off-the-shelf coding agent with an auto-verification retry loop. NeuKReAct also introduces a combinatorial creativity score N(R), the mean shortest-path distance between retrieved papers in the citation graph, to quantify cross-domain novelty. \n\n\n3. Neuromorphic Codesign Agent – multimodal KG & constrained generation\nThe Neuromorphic Codesign Agent scales the KG and extends it with multimodal nodes: typed concept nodes, LaTeX formula nodes, validated Python code snippets, and validated SPICE netlists, linked by typed cross-modal edges (DEFINED_BY, HAS_CODE, HAS_NETLIST, DERIVED_FROM) with cross-document deduplication merges creating one connected substrate instead of per-document silos. An interactive Streamlit application runs a four-strategy hypothesis engine (limitation-, analogy-, gap-, and conflict-driven generation) with embedding-based deduplication and five-dimensional scoring (novelty, groundedness, feasibility, testability, internal consistency), then produces constraint-driven code and circuit generation: a seven-check validation loop for Python (raising constraint compliance from ~70% to ~88%) and a five-check validation loop with six post-processing stages for SPICE netlists – closing the loop from biological principle to a simulation-ready hardware circuit.\n\n\n\n\n\n\n\nFigure 2: Neuromorphic Codesign Agent workflow: KG-grounded research analysis, multi-strategy hypothesis generation, and constrained code/netlist synthesis, benchmarked against a standard GraphRAG baseline on every query."
+  },
+  {
+    "objectID": "index.html#the-knight-stack",
+    "href": "index.html#the-knight-stack",
+    "title": "KNIGHT",
+    "section": "The KNIGHT stack",
+    "text": "The KNIGHT stack\n\n\n\n\n\n\n\n\n\nLayer\nSystem\nContribution\nCorpus\n\n\n\n\n1 - KG Foundation\nNeuKRAG\nStructured, queryable KG with GraphRAG retrieval\n2,396 neuromorphic papers\n\n\n2 - Cross-Domain Reasoning\nNeuKReAct\nMulti-corpus agentic planning + creativity metrics\n3,658 papers (neuroscience + ML + neuromorphic)\n\n\n3 - Full Co-Design\nNeuromorphic Codesign Agent\nMultimodal KG -&gt; hypothesis -&gt; code -&gt; SPICE circuit\n5,999 PDFs\n\n\n\nThe common thread across all three layers is a structured knowledge graph that stays queryable, provenance-tracked, and explainable as it grows from text triples to a multimodal substrate spanning formulas, code, and circuits."
+  },
+  {
+    "objectID": "index.html#learn-more",
+    "href": "index.html#learn-more",
+    "title": "KNIGHT",
+    "section": "Learn more",
+    "text": "Learn more\nSupporting visuals and extended narrative for this overview are drawn from project presentations and posters – see the Community & Activities page for the DOE ASCR PI Meeting poster, workshop deck, and related talks. Full technical detail is available on the Publications page, and the underlying software is described on the Software page.\n\n\n921,545 triples - NeuKRAG (2,396 papers)\n\n\n3,658 papers - NeuKReAct multi-corpus KG\n\n\n5,999 PDFs - Codesign Agent multimodal KG\n\n\n165,287 cross-modal edges (concept&lt;-&gt;formula&lt;-&gt;code&lt;-&gt;netlist)"
   },
   {
     "objectID": "community.html",
@@ -91,52 +112,31 @@
     "text": "Tutorial\n\nIntroduction to Fugu: A Framework for Composing Neural Algorithms, NICE 2026, Atlanta, GA – Felix Wang and James Brad Aimone\nSuperNeuro + NeuroCoreX Tutorial: Running Fast and Scalable Neuromorphic Simulations, NICE 2026, Atlanta, GA – Ashish Gautam\nSuperNeuro + NeuroCoreX Tutorial: Running Fast and Scalable Neuromorphic Simulations, , ICONS 2026 – Ashish Gautam\nSango, an enhanced frontend interface to Fugu, ICONS 2026 – Felix Wang"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "KNIGHT",
+    "objectID": "people.html",
+    "href": "people.html",
+    "title": "People",
     "section": "",
-    "text": "Knowledge-graph-driven reasoning for accelerating neuromorphic computing co-design\nKNIGHT builds knowledge-graph (KG) construction, GraphRAG retrieval, and agentic reasoning systems that connect neuroscience, circuit design, device physics, and computer architecture – the disciplines that must be co-designed to realize next-generation, brain-inspired computing hardware."
+    "text": "KNIGHT is a collaboration between Oak Ridge National Laboratory, Sandia National Laboratories, and Virginia Tech. The roster below is drawn from the project team slide and the author lists of the NeuKRAG, NeuKReAct, and Neuromorphic Codesign Agent papers. Badges indicate which of the three systems each person contributes to."
   },
   {
-    "objectID": "index.html#the-problem-energy-walls-and-knowledge-silos",
-    "href": "index.html#the-problem-energy-walls-and-knowledge-silos",
-    "title": "KNIGHT",
-    "section": "The problem: energy walls and knowledge silos",
-    "text": "The problem: energy walls and knowledge silos\nNeuromorphic computing promises orders-of-magnitude efficiency gains over conventional AI hardware – the human brain runs roughly 86 billion neurons and 100 trillion synapses on about 20 W, while the von Neumann bottleneck of moving data between CPU and memory consumes 60-80% of the energy in today’s deep learning workloads. Realizing that promise requires iterative co-design across neuroscience, machine learning, circuit design, device materials, and computer architecture: a learning rule choice constrains device variability tolerances, a circuit topology bounds achievable network architectures, and a fabrication constraint can rule out an entire algorithmic family.\nThat knowledge is scattered across thousands of publications, and it rarely crosses domain boundaries on its own. An analysis of papers spanning neuroscience, machine learning, and neuromorphic computing found 8,771 citation events but only 6 that bridge across all three domains – the cross-domain synthesis that co-design depends on is almost never done by the literature itself, and naive LLMs and vector-based RAG cannot reliably fill the gap: they hallucinate, lose provenance, and cannot traverse the multi-hop chains (device -&gt; circuit -&gt; learning rule -&gt; performance) that hardware-aware reasoning requires.\nKNIGHT’s central thesis is that structured knowledge graphs are the connective tissue across the neuromorphic co-design stack – from SuperNeuroMAT algorithm simulation, to NeuroCoreX FPGA emulation, to Daffodil memristive device characterization.\n\n\n\n\n\n\nFigure 1: The KNIGHT knowledge graph connects publications, mathematical models, code, and circuit artifacts into a single queryable substrate spanning the neuromorphic co-design stack."
+    "objectID": "people.html#oak-ridge-national-laboratory",
+    "href": "people.html#oak-ridge-national-laboratory",
+    "title": "People",
+    "section": "Oak Ridge National Laboratory",
+    "text": "Oak Ridge National Laboratory\n\n\n Ramakrishnan Kannan\nOak Ridge National Laboratory\n\n\n Ashish Gautam\nOak Ridge National Laboratory\n\n\n\n Robert Patton\nOak Ridge National Laboratory\n\n\n\n Thomas E. Potok\nOak Ridge National Laboratory\n\n\n\nTT Todd Thomas\nOak Ridge National Laboratory\n\n\n\n Nicholas Haas\nOak Ridge National Laboratory\n\n\n\n Vikram Ramavarappu\nUniversity of Illinois – Urbana Champagne – Intern\n\n\n\n Shuaicheng Zhang\nVirginia Tech – Intern\n\n\n\n Zachary Johnson-Scott\nOak Ridge National Laboratory\n\n\n Emily J Herron\nOak Ridge National Laboratory"
   },
   {
-    "objectID": "index.html#three-complementary-research-threads",
-    "href": "index.html#three-complementary-research-threads",
-    "title": "KNIGHT",
-    "section": "Three complementary research threads",
-    "text": "Three complementary research threads\nKNIGHT is built as three progressively deeper systems, each extending the last – from general-purpose scientific KG construction, to cross-domain agentic reasoning, to full multimodal co-design automation.\n\n1. NeuKRAG – scalable scientific KG construction & GraphRAG\n(NICE 2026 paper / SciKRAG framework)\nNeuKRAG is a general-purpose pipeline for constructing scientific knowledge graphs from technical literature and querying them through GraphRAG. Documents are processed through an 8-stage pipeline – extract -&gt; merge -&gt; postmerge -&gt; dedupe -&gt; cluster -&gt; embed -&gt; ontology -&gt; check – using open, lightweight LLMs (gpt-oss-120b, llama3.3:70b, gpt-oss-20b, ibm/granite4:small-h) served across distributed vLLM and Ollama backends.  The GraphRAG query layer combines FAISS vector similarity with k-hop graph traversal and role-specific LLM routing (extractor -&gt; ranker -&gt; reasoner) to produce responses richer than naive LLM baselines, with every claim traceable to a source paper and section. This system generalizes beyond neuromorphics to any technical domain requiring structured, explainable scientific reasoning.\n\n\n2. NeuKRAG (domain) & NeuKReAct – cross-domain agentic hypothesis generation\nApplied specifically to neuromorphic literature, the KG-RAG approach exposes multi-hop relationships (e.g., device variability -&gt; STDP robustness -&gt; algorithm selection) that vector search alone cannot surface. NeuKReAct extends this into an agentic reasoning framework: a multi-corpus KG spans neuroscience, machine learning, and neuromorphic computing –  A DSPy ReAct agent works through a 7-stage locked blackboard – lit_search -&gt; neuron_choice -&gt; synapse_choice -&gt; learning_rule -&gt; architecture -&gt; implementation -&gt; evaluation – using 11 specialized retrieval tools, then an execution head turns the committed design into a structured Markdown design document and a runnable SNNTorch codebase, completed end-to-end by an off-the-shelf coding agent with an auto-verification retry loop. NeuKReAct also introduces a combinatorial creativity score N(R), the mean shortest-path distance between retrieved papers in the citation graph, to quantify cross-domain novelty. \n\n\n3. Neuromorphic Codesign Agent – multimodal KG & constrained generation\nThe Neuromorphic Codesign Agent scales the KG and extends it with multimodal nodes: typed concept nodes, LaTeX formula nodes, validated Python code snippets, and validated SPICE netlists, linked by typed cross-modal edges (DEFINED_BY, HAS_CODE, HAS_NETLIST, DERIVED_FROM) with cross-document deduplication merges creating one connected substrate instead of per-document silos. An interactive Streamlit application runs a four-strategy hypothesis engine (limitation-, analogy-, gap-, and conflict-driven generation) with embedding-based deduplication and five-dimensional scoring (novelty, groundedness, feasibility, testability, internal consistency), then produces constraint-driven code and circuit generation: a seven-check validation loop for Python (raising constraint compliance from ~70% to ~88%) and a five-check validation loop with six post-processing stages for SPICE netlists – closing the loop from biological principle to a simulation-ready hardware circuit.\n\n\n\n\n\n\n\nFigure 2: Neuromorphic Codesign Agent workflow: KG-grounded research analysis, multi-strategy hypothesis generation, and constrained code/netlist synthesis, benchmarked against a standard GraphRAG baseline on every query."
+    "objectID": "people.html#sandia-national-laboratories",
+    "href": "people.html#sandia-national-laboratories",
+    "title": "People",
+    "section": "Sandia National Laboratories",
+    "text": "Sandia National Laboratories\n\n\n James B. Aimone\nSandia National Laboratories \n\n\nWS William Severa\nSandia National Laboratories\n\n\n Felix Wang\nSandia National Laboratories"
   },
   {
-    "objectID": "index.html#the-knight-stack",
-    "href": "index.html#the-knight-stack",
-    "title": "KNIGHT",
-    "section": "The KNIGHT stack",
-    "text": "The KNIGHT stack\n\n\n\n\n\n\n\n\n\nLayer\nSystem\nContribution\nCorpus\n\n\n\n\n1 - KG Foundation\nNeuKRAG\nStructured, queryable KG with GraphRAG retrieval\n2,396 neuromorphic papers\n\n\n2 - Cross-Domain Reasoning\nNeuKReAct\nMulti-corpus agentic planning + creativity metrics\n3,658 papers (neuroscience + ML + neuromorphic)\n\n\n3 - Full Co-Design\nNeuromorphic Codesign Agent\nMultimodal KG -&gt; hypothesis -&gt; code -&gt; SPICE circuit\n5,999 PDFs\n\n\n\nThe common thread across all three layers is a structured knowledge graph that stays queryable, provenance-tracked, and explainable as it grows from text triples to a multimodal substrate spanning formulas, code, and circuits."
-  },
-  {
-    "objectID": "index.html#learn-more",
-    "href": "index.html#learn-more",
-    "title": "KNIGHT",
-    "section": "Learn more",
-    "text": "Learn more\nSupporting visuals and extended narrative for this overview are drawn from project presentations and posters – see the Community & Activities page for the DOE ASCR PI Meeting poster, workshop deck, and related talks. Full technical detail is available on the Publications page, and the underlying software is described on the Software page.\n\n\n921,545 triples - NeuKRAG (2,396 papers)\n\n\n3,658 papers - NeuKReAct multi-corpus KG\n\n\n5,999 PDFs - Codesign Agent multimodal KG\n\n\n165,287 cross-modal edges (concept&lt;-&gt;formula&lt;-&gt;code&lt;-&gt;netlist)"
-  },
-  {
-    "objectID": "software.html",
-    "href": "software.html",
-    "title": "Software",
-    "section": "",
-    "text": "KNIGHT’s codebase is organized around three distinct, independently useful artifacts: a knowledge-graph construction pipeline, a GraphRAG query layer built on top of it, and an interactive Streamlit application for KG-grounded neuromorphic co-design. Repository links below are placeholders pending public release approval."
-  },
-  {
-    "objectID": "software.html#release-notes",
-    "href": "software.html#release-notes",
-    "title": "Software",
-    "section": "Release notes",
-    "text": "Release notes\nAll three artifacts are currently under active development at Oak Ridge National Laboratory. Public GitHub repositories will be created and linked here once cleared for release. Please contact the PI to request access to the codebase."
+    "objectID": "people.html#virginia-tech-collaborators",
+    "href": "people.html#virginia-tech-collaborators",
+    "title": "People",
+    "section": "Virginia Tech Collaborators",
+    "text": "Virginia Tech Collaborators\n\n\n Dawei Zhou\nVirginia Tech"
   }
 ]
