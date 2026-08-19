@@ -12,26 +12,31 @@ systems each person contributes to.
 ::: {.callout-note appearance="simple"}
 Source materials specify the Principal Investigator explicitly; they do not
 label every contributor's exact position (e.g., postdoc vs. graduate student
-vs. staff scientist). Contributors are grouped by institutional affiliation
-below rather than by an unverified job title. Please contact the PI to
+vs. staff scientist). Contributors are grouped by institutional affiliation.
+
+<!-- below rather than by an unverified job title. Please contact the PI to 
 correct or extend an entry.
-:::
+::: -->
 
-## Principal Investigator
+<!-- ## Principal Investigator -->
 
-::: {.people-grid}
-::: {.person-card}
-![](images/people/ramakrishnan-kannan.jpg){.person-photo}
-[Ramakrishnan Kannan]{.person-name}\
-[Oak Ridge National Laboratory]{.person-affil}
+<!-- ::: {.people-grid} -->
 
-<!-- `NeuKRAG` `NeuKReAct` `Codesign Agent` -->
-:::
+<!-- `NeuKRAG` `NeuKReAct` `Codesign Agent`
+::: -->
 :::
 
 ## Oak Ridge National Laboratory
 
 ::: {.people-grid}
+
+::: {.person-card}
+![](images/people/ramakrishnan-kannan.jpg){.person-photo}
+[Ramakrishnan Kannan]{.person-name}\
+[Oak Ridge National Laboratory]{.person-affil}
+
+:::
+
 ::: {.person-card}
 ![](images/people/ashish-gautam.jpg){.person-photo}
 [Ashish Gautam]{.person-name}\
